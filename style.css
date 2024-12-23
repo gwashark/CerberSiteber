@@ -282,3 +282,43 @@ a {
   min-width: 100px;
   text-align: right;
 }
+
+/* Character Info Styles */
+.character-info {
+  background: rgba(159, 77, 214, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.info-item {
+  background: rgba(159, 77, 214, 0.15);
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-2px);
+}
+
+.fun-facts {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.fun-facts li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(159, 77, 214, 0.2);
+}
+
+.fun-facts li:last-child {
+  border-bottom: none;
+}
