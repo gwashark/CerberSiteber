@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
   <head>
     <title>CerberVT</title>
     <link
@@ -39,49 +39,26 @@
   <body>
     <header>
       <h1>CerberVT</h1>
-      <p>This is a unofficial community ran website. Not affiliated with Cerber.</p>
+      <span>This is a unofficial community ran website. Not affiliated with Cerber.</span>
+      <nav id='menu'>
+        <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+        <ul>
+          <li><a href='/'>Home</a></li>  
+          <li><a href="/lore">Intro/Lore</a></li> 
+          <li><a href="/timeline">Timeline</a></li>   
+        </ul>
+      </nav>
     </header>
 
     <main>
-      <div class="tabs">
-        <div class="tab active" onclick="openTab(event, 'about')">About</div>
-        <div class="tab" onclick="openTab(event, 'forms')">Forms</div>
-        <div class="tab" onclick="openTab(event, 'timeline')">Timeline</div>
-      </div>
-
-      <div id="about" class="tab-content active">
         <h2>About CerberVT</h2>
-        <div class="custom-video-container">
-          <video class="custom-video" id="introVideo">
-            <source src="assets/IntroAndLore.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div class="custom-video-controls">
-            <button class="play-pause-btn" id="playPauseBtn">
-              <svg viewBox="0 0 24 24" class="play-icon">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-              <svg viewBox="0 0 24 24" class="pause-icon" style="display: none">
-                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-              </svg>
-            </button>
-            <input
-              type="range"
-              class="time-slider"
-              id="timeSlider"
-              min="0"
-              value="0"
-              step="0.1"
-            />
-            <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
-          </div>
-        </div>
         <p>
           Cerber was named after Cerberus, the gatekeeper of Hell, and lives in
           hell under the UK. She was entranced by the world of video games,
           anime, VTubers and idols filled with fun and luster, a stark contrast
           to the dark underworld she was all so familiar with.
         </p>
+        <a href="/lore"><button>Watch Lore -></button></a>
         <div class="character-info">
           <h3>Character Details 💜🦴</h3>
           <div class="info-grid">
@@ -170,7 +147,7 @@
           </li>
         </ul>
 
-        <div class="image-gallery">
+        <div class="maingallery image-gallery">
           <div class="gallery-item">
             <img
               src="assets/CerbyNMinawanComparison.webp"
@@ -279,198 +256,6 @@
             <div class="social-title">Email</div>
           </a>
         </div>
-      </div>
-
-      <div id="timeline" class="tab-content">
-        <h2>Events and History:</h2>
-        <div class="timeline-container">
-          <div class="timeline-item">
-            <div class="timeline-date">January 21, 2023</div>
-            <div class="timeline-content">Debuted as a VTuber</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">August 2023</div>
-            <div class="timeline-content">
-              Achieved 1,000 followers on Twitch
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">March 23, 2024</div>
-            <div class="timeline-content">
-              Reached over 3,000 Twitch followers after Neuro-sama community
-              raid
-              <div class="gallery-item" style="margin-top: 15px">
-                <img
-                  src="assets/timeline/March23-2024.png"
-                  alt="Reaching 3000 followers milestone"
-                  onclick="showModal(this.src)"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">April 13, 2024</div>
-            <div class="timeline-content">
-              Appeared in cat form (Catber)
-              <div class="gallery-item" style="margin-top: 15px">
-                <img
-                  src="assets/timeline/Catber.webp"
-                  alt="Cerber's cat form (Catber)"
-                  onclick="showModal(this.src)"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">April 20, 2024</div>
-            <div class="timeline-content">
-              First official collab with Neuro-sama. Reached 7,000 Twitch
-              followers
-              <div class="gallery-item" style="margin-top: 15px">
-                <img
-                  src="assets/timeline/April20-2024.png"
-                  alt="First Neuro-sama collab"
-                  onclick="showModal(this.src)"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">April 22, 2024</div>
-            <div class="timeline-content">Reached 8,000 Twitch followers</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">April 27, 2024</div>
-            <div class="timeline-content">
-              Unplanned collab with Vedal987 during Helldivers 2 stream
-              <div class="gallery-item" style="margin-top: 15px">
-                <img
-                  src="assets/timeline/April27-2024.png"
-                  alt="Vedal987 collab during Helldivers 2"
-                  onclick="showModal(this.src)"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">May 8, 2024</div>
-            <div class="timeline-content">Reached 10,000 Twitch followers</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">May 15, 2024</div>
-            <div class="timeline-content">Became a Twitch partner</div>
-            <div class="gallery-item" style="margin-top: 15px">
-              <img
-                src="assets/timeline/May15-2024.jpg"
-                alt="CerberVT became a Twitch partner"
-                onclick="showModal(this.src)"
-              />
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">June 3, 2024</div>
-            <div class="timeline-content">
-              Launched first subathon (Cerbathon)
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">June 10, 2024</div>
-            <div class="timeline-content">Reached 15,000 Twitch followers</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">June 27, 2024</div>
-            <div class="timeline-content">
-              Surpassed 20,000 Twitch subscribers on day 22 of subathon
-              <div class="gallery-item" style="margin-top: 15px">
-                <img
-                  src="assets/timeline/June27-2024.png"
-                  alt="20,000 Twitch subscribers milestone"
-                  onclick="showModal(this.src)"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">July 2, 2024</div>
-            <div class="timeline-content">Reached 20,000 Twitch followers</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">August 18, 2024</div>
-            <div class="timeline-content">
-              Ended 61-day subathon with 50,159 gifted subs
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">September 2, 2024</div>
-            <div class="timeline-content">
-              Returned to regular streaming after break
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-date">December 6, 2024</div>
-            <div class="timeline-content">Reached 40,000 Twitch followers</div>
-          </div>
-        </div>
-      </div>
-
-      <div id="forms" class="tab-content">
-        <h2>Main Outfit</h2>
-        <div class="image-gallery">
-          <div class="gallery-item">
-            <img
-              src="assets/forms/Cerbervt_full_model.webp"
-              alt="Cerber's full model"
-              onclick="showModal(this.src)"
-            />
-          </div>
-        </div>
-        <h2>VRChat Outfits</h2>
-        <div class="image-gallery">
-          <div class="gallery-item">
-            <img
-              src="assets/forms/VRChat/Cerber_VRChat_costume_1.webp"
-              alt="Cerber in sailor dress"
-              onclick="showModal(this.src)"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="assets/forms/VRChat/Cerber_VRChat_costume_2.webp"
-              alt="Cerber in purple dress"
-              onclick="showModal(this.src)"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="assets/forms/VRChat/Cerber_VRChat_costume_3.png"
-              alt="Cerber in casual outfit"
-              onclick="showModal(this.src)"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="assets/forms/VRChat/Cerber_VRChat_costume_4.webp"
-              alt="Cerber in gothic lolita"
-              onclick="showModal(this.src)"
-            />
-          </div>
-        </div>
-      </div>
     </main>
 
     <div id="imageModal" class="modal">
