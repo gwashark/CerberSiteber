@@ -1,11 +1,12 @@
 {
   "dependencies": {
+    "@twurple/api": "^7.2.1",
+    "@twurple/auth": "^7.2.1",
     "wrangler": "^3.99.0"
   },
   "name": "cerbersiteber",
   "version": "1.0.0",
   "description": "A site for Cerber!",
-  "devDependencies": {},
   "scripts": {
     "dev": "wrangler pages dev ./site --live-reload"
   },
