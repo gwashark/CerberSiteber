@@ -129,5 +129,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Wrangler
+# Clouflare Configurations
 .wrangler
+.dev.vars

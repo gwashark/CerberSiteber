@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>CerberVT</title>
@@ -24,69 +25,107 @@
       sizes="16x16"
       href="assets/favicons/favicon-16x16.png"
     />
-    <link rel="manifest" href="assets/favicons/site.webmanifest" />
-    <meta name="title" content="CerberVT">
-    <meta name="description" content="Cerber was named after Cerberus, the gatekeeper of Hell, and lives under the UK. She was entranced by video games, anime, VTubers and idols.">
-    <meta name="keywords" content="cerbervt, cerber, twitch, hellhound, vtuber, vedalverse">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="language" content="English">
-    <meta name="theme-color" content="#9f4dd6">
-    <meta property="og:image" content="https://cerbervt.pages.dev/assets/embedimage.png" />
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="title" content="CerberVT" />
+    <meta
+      name="description"
+      content="Cerber was named after Cerberus, the gatekeeper of Hell, and lives under the UK. She was entranced by video games, anime, VTubers and idols."
+    />
+    <meta
+      name="keywords"
+      content="cerbervt, cerber, twitch, hellhound, vtuber, vedalverse"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+    <meta name="theme-color" content="#9f4dd6" />
+    <meta
+      property="og:image"
+      content="https://cerbervt.pages.dev/assets/embedimage.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script
+      src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+      defer
+    ></script>
+    <script src="notifications.js"></script>
+    <link rel="stylesheet" href="add2homescreen/library.css" />
+    <script src="add2homescreen/library.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <link rel="manifest" href="/manifest.json" />
+    <script src="https://unpkg.com/mustache@latest"></script>
   </head>
 
   <body>
     <header>
+      <div class="plus-icon" hidden>+</div>
       <h1>CerberVT</h1>
-      <span>This is a unofficial community ran website. Not affiliated with Cerber.</span>
-      <nav id='menu'>
-        <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
-        <ul>
-          <li><a href='/'>Home</a></li>  
-          <li><a href="/lore">Intro/Lore</a></li> 
-          <li><a href="/timeline">Timeline</a></li>   
-        </ul>
+      <span
+        >This is a unofficial community ran website. Not affiliated with
+        Cerber.</span
+      >
+      <nav id="menu">
+        <input
+          type="checkbox"
+          id="responsive-menu"
+          onclick="updatemenu()"
+        /><label></label>
+        <ul id="navlinks"></ul>
       </nav>
     </header>
 
     <main>
-        <h1>Intro/Lore</h1>
-        <div class="custom-video-container">
-            <video class="custom-video" id="introVideo">
-              <source src="assets/IntroAndLore.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div class="custom-video-controls">
-              <button class="play-pause-btn" id="playPauseBtn">
-                <svg viewBox="0 0 24 24" class="play-icon">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-                <svg viewBox="0 0 24 24" class="pause-icon" style="display: none">
-                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                </svg>
-              </button>
-              <input
-                type="range"
-                class="time-slider"
-                id="timeSlider"
-                min="0"
-                value="0"
-                step="0.1"
-              />
-              <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
-            </div>
-          </div>
+      <h1>Intro/Lore</h1>
+      <div class="custom-video-container">
+        <video class="custom-video" id="introVideo">
+          <source src="assets/IntroAndLore.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="custom-video-controls">
+          <button
+            class="play-pause-btn"
+            id="playPauseBtn"
+            aria-label="Playback Button"
+            title="Play/Pause"
+          >
+            <svg viewBox="0 0 24 24" class="play-icon">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg viewBox="0 0 24 24" class="pause-icon" style="display: none">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+          </button>
+          <input
+            type="range"
+            class="time-slider"
+            id="timeSlider"
+            min="0"
+            value="0"
+            step="0.1"
+            aria-label="Playback Slider"
+          />
+          <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
+        </div>
+      </div>
     </main>
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&#xd7;</span>
+      <img class="modal-content" id="modalImg" />
+    </div>
     <footer>
-        wan wan! ૮ ・ﻌ・ა
-        <a
-          href="https://virtualyoutuber.fandom.com/wiki/CerberVT"
-          style="color: white; text-decoration: underline"
-          >Main Source Used</a
-        >
-      </footer>
-      <script src="video.js"></script>
-      <script src="script.js"></script>
-</body>
+      wan wan! ૮ ・ﻌ・ა
+      <a
+        href="https://virtualyoutuber.fandom.com/wiki/CerberVT"
+        style="color: white; text-decoration: underline"
+        >Main Source Used</a
+      >
+    </footer>
+    <script id="navtemplate" type="x-tmpl-mustache">
+      {{#links}}
+      <li><a href="{{url}}">{{name}}</a></li>
+      {{/links}}
+    </script>
+    <script src="video.js"></script>
+    <script src="script.js"></script>
+    <script src="navbar.js"></script>
+  </body>
 </html>

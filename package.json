@@ -1,14 +1,16 @@
 {
   "dependencies": {
-    "@twurple/api": "^7.2.1",
-    "@twurple/auth": "^7.2.1",
+    "clean-css": "^5.3.3",
+    "html-minifier": "^4.0.0",
+    "uglify-js": "^3.19.3",
     "wrangler": "^3.99.0"
   },
   "name": "cerbersiteber",
   "version": "1.0.0",
   "description": "A site for Cerber!",
   "scripts": {
-    "dev": "wrangler pages dev ./site --live-reload"
+    "dev": "wrangler pages dev ./site --live-reload --ip 0.0.0.0",
+    "build": "node minify.js site dist"
   },
   "repository": {
     "type": "git",

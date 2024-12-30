@@ -1,13 +1,13 @@
 const ASSETS = [
-    "cerberOnline.gif",
-    "cerberPuddle.gif",
-    "cerberSphere.gif",
-    "Cerbongo.gif",
-    "cerbyHug.png",
-    "minaOno.gif",
-    "Nuzzle.gif",
-    "pogs.gif",
-    "ShikanokoNokonokoKoshiwanwan.gif"
+    "cerberOnline",
+    "cerberPuddle",
+    "cerberSphere",
+    "Cerbongo",
+    "cerbyHug",
+    "minaOno",
+    "Nuzzle",
+    "pogs",
+    "ShikanokoNokonokoKoshiwanwan"
 ]
 
 export async function onRequest(context) {
@@ -16,7 +16,7 @@ export async function onRequest(context) {
     const randomIndex = Math.floor(Math.random() * ASSETS.length);
     const randomFile = ASSETS[randomIndex];
 
-    url.pathname = `/assets/emotes/${randomFile}`;
+    url.pathname = `/assets/emotes/${randomFile}.webp`;
 
     const response = await fetch(url.toString());
     return new Response(response.body, {

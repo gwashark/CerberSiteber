@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+/*
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tab-content");
@@ -33,6 +34,7 @@ function openTab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+  */
 
 function showModal(src) {
   const modal = document.getElementById("imageModal");
@@ -44,13 +46,4 @@ function showModal(src) {
 function closeModal() {
   const modal = document.getElementById("imageModal");
   modal.style.display = "none";
-}
-
-function updatemenu() {
-  if (document.getElementById('responsive-menu').checked == true) {
-    document.getElementById('menu').style.borderBottomRightRadius = '0';
-    document.getElementById('menu').style.borderBottomLeftRadius = '0';
-  }else{
-    document.getElementById('menu').style.borderRadius = '10px';
-  }
 }
