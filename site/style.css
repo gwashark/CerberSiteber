@@ -1,5 +1,5 @@
 body {
-  background-image: url("assets/bg.png");
+  background-image: url("assets/bg.webp");
   font-family: "Yomogi", cursive;
   color: white;
   text-shadow: 1px 1px 2px black;
@@ -9,6 +9,111 @@ body {
 header {
   text-align: center;
   padding: 40px;
+}
+
+header span {
+  padding: 6px;
+}
+
+#menu {
+	background: rgba(0, 0, 0, 0);
+	height: 35px;
+	border-radius: 10px;
+}
+#menu ul, #menu li {
+	padding: 0;
+	list-style: none
+}
+#menu li {
+	display: inline-block;
+	position: relative;
+}
+#menu a {
+	display: block;
+	line-height: 35px;
+	padding: 0 14px;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+#menu a.dropdown-arrow:after {
+	content: "\25BE";
+	margin-left: 5px;
+}
+#menu li a:hover {
+	color: #ffffff;
+	background: #5a0f8c;
+  border-radius: 10px;
+}
+#menu input {
+	display: none;
+	margin: 0;
+	padding: 0;
+	height: 35px;
+	width: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+#menu label {
+	display: none;
+	line-height: 35px;
+	text-align: center;
+	position: absolute;
+	left: 47% !important;
+}
+#menu label:before {
+	font-size: 1.6em;
+	color: #FFFFFF;
+	content: "\2261"; 
+}
+#menu ul.sub-menus{
+	height: auto;
+	overflow: hidden;
+	width: 170px;
+	background: #444444;
+	position: absolute;
+	z-index: 99;
+	display: none;
+}
+#menu ul.sub-menus li {
+	display: block;
+	text-align: left;
+	width: 100%;
+}
+#menu ul.sub-menus a {
+	color: #FFFFFF;
+	font-size: 16px;
+}
+#menu li:hover ul.sub-menus {
+	display: block
+}
+#menu ul.sub-menus a:hover{
+	background: #F2F2F2;
+	color: #444444;
+}
+@media screen and (max-width: 800px){
+	#menu {position:relative}
+	#menu ul {background:#444444;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none;text-align:left;}
+	#menu ul.sub-menus {width:100%;position:static;}
+	#menu ul.sub-menus a {padding-left:30px;}
+	#menu li {display:block;float:none;width:auto;}
+	#menu input, #menu label {position:absolute;top:0;left:0;display:block}
+	#menu input {z-index:4}
+	#menu input:checked + label {color:#FFFFFF}
+	#menu input:checked + label:before {content:"\00d7"}
+	#menu input:checked ~ ul {display:block}
+}
+
+button {
+  background-color: #9f4dd6;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 h1 {
@@ -23,10 +128,15 @@ main {
   border-radius: 15px;
 }
 
+main h1, main h2, main h3, main h4, main h5, main h6 {
+  text-align: center;
+}
+
 footer {
   text-align: center;
   margin-top: 40px;
   font-size: 14px;
+  margin-bottom: 20px;
 }
 
 a {
@@ -169,19 +279,24 @@ a {
 
 .gallery-item img {
   width: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
   cursor: pointer;
 }
 
-@media (min-width:600px)  {
-    .gallery-item img {
-        height: 100%;
-    }
+@media (max-width:600px)  {
+  .gallery-item img {
+    height: auto !important;
+  }
+}
 
-    .timeline-item .timeline-content .gallery-item img {
-        height: auto;
-    }
+.timeline-item .timeline-content .gallery-item img {
+  height: auto;
+}
+
+.maingallery .gallery-item img {
+  height: 100%;
 }
 
 .modal {
@@ -325,4 +440,57 @@ a {
 
 .fun-facts li:last-child {
   border-bottom: none;
+}
+
+.notifications-widget {
+  background-color: #9f4dd6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.notifications-widget p {
+  text-align: left;
+  color: white;
+  margin: 0;
+}
+
+.notifications-widget button {
+  background-color: #5a0f8c;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.plus-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.plus-icon:hover {
+  background-color: #0056b3;
+}
+
+.adhs-modal {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4f4dd6;
 }

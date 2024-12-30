@@ -1,0 +1,16 @@
+<div class="tabs">
+    <div class="tab active" onclick="openTab(event, 'about')">About</div>
+    <div class="tab" onclick="openTab(event, 'timeline')">Timeline</div>
+</div>
+
+<div id="about" class="tab-content active"></div>
+
+<!--
+<li><a class='dropdown-arrow' href='http://'>Services</a>
+<ul class='sub-menus'>
+    <li><a href='http://'>Services 1</a></li>
+    <li><a href='http://'>Services 2</a></li>
+    <li><a href='http://'>Services 3</a></li>
+</ul>
+</li>
+-->
