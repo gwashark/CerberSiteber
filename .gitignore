@@ -132,3 +132,7 @@ dist
 # Clouflare Configurations
 .wrangler
 .dev.vars
+
+# MacOS-specific files
+__MACOSX/
+.DS_Store
