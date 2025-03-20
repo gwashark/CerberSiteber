@@ -18,8 +18,8 @@ import type { CharacterDetailsProps, GalleryProps, SocialProps } from '../types/
         <h3>Character Details 💜🦴</h3>
         <div class="info-grid">
       	  {CharacterDetails.map((detail: CharacterDetailsProps) => (
-			<div class="info-item"><strong>{detail.name}:</strong> {detail.value}</div>
-		  ))}
+			      <div class="info-item"><strong>{detail.name}:</strong> {detail.value}</div>
+		      ))}
         </div>
 
         <h3>Personality</h3>
@@ -43,22 +43,9 @@ import type { CharacterDetailsProps, GalleryProps, SocialProps } from '../types/
 
         <h3>Fun Facts</h3>
         <ul class="fun-facts">
-		  {FunFacts.map((fact: string) => (
-			<li>{fact}</li>
-		  ))}
-          <li>Owns a caramel-colored Pomeranian named Peanut</li>
-          <li>
-            Has a special Twitch chat rule: "Cerberbullying is only allowed if
-            served with equal parts love & affection ૮ ・ﻌ・ა"
-          </li>
-          <li>
-            Is highly ticklish - even thinking about being tickled makes her
-            giggly
-          </li>
-          <li>
-            Built like a squeaky toy - weapons or hell's natural disasters just
-            make her squeak safely without damage
-          </li>
+		      {FunFacts.map((fact: string) => (
+			      <li>{fact}</li>
+		      ))}
         </ul>
       </div>
       <h3>Her Community: Minawan</h3>
@@ -71,37 +58,38 @@ import type { CharacterDetailsProps, GalleryProps, SocialProps } from '../types/
 
       <h3>Likes</h3>
       <ul>
-		{Likes.map((like: string) => (
-			<li>{like}</li>
-		))}
+		    {Likes.map((like: string) => (
+			    <li>{like}</li>
+		    ))}
       </ul>
 
       <h3>Dislikes</h3>
       <ul>
-		{Dislikes.map((dislike: string) => (
-			<li>{dislike}</li>
-		))}
+		    {Dislikes.map((dislike: string) => (
+			    <li>{dislike}</li>
+		    ))}
       </ul>
 
       <div class="maingallery image-gallery">
-		{Gallery.map((entry: GalleryProps) => (
-			<div class="gallery-item">
-				<img src={`assets/${entry.src}.webp`}
-				alt={entry.alt}
-				onclick="showModal(this.src)"
-				/>
-			</div>
-		))}
+		    {Gallery.map((entry: GalleryProps) => (
+			    <div class="gallery-item">
+				    <img
+              src={`assets/${entry.src}.webp`}
+				      alt={entry.alt}
+				      onclick="showModal(this.src)"
+				    />
+			    </div>
+		    ))}
       </div>
       <div class="social-grid">
-		{Socials.map((social: SocialProps) => (
-			<a href={social.link} class="social-item">
-				<svg class="social-icon" viewBox="0 0 24 24">
-					<path d={social.svgd} />
-				</svg>
-				<div class="social-title">{social.name}</div>
-			</a>
-		))}
+		    {Socials.map((social: SocialProps) => (
+			    <a href={social.link} class="social-item">
+				    <svg class="social-icon" viewBox="0 0 24 24">
+					    <path d={social.svgd} />
+				    </svg>
+				    <div class="social-title">{social.name}</div>
+			    </a>
+		    ))}
       </div>
     </main>
 </Layout>
