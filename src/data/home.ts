@@ -2,6 +2,7 @@ import type {
   CharacterDetailsProps,
   GalleryProps,
   SocialProps,
+  h3ParagraphProps,
 } from "../types/home";
 
 export const CharacterDetails: CharacterDetailsProps[] = [
@@ -113,4 +114,19 @@ export const Socials: SocialProps[] = [
     svgd: "M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z",
     link: "mailto:business@cerber.dog",
   },
+];
+
+export const h3Paragraphs: h3ParagraphProps[] = [
+  {
+    header: "Personality",
+    desc: "She is a cheerful beacon of intense positivity and wholesomeness. As a hellhound, she nicknames everyone with \"Wan\" in their name and uses it like a verbal tick, such as switching \"1\" for wan at every opportunity. She is easily flustered by simple compliments, adding to her endearing nature."
+  },
+  {
+    header: "Appearance",
+    desc: "Standing at 4'1\" (or, as she says it, 4 foot wan), Cerber has blonde hair styled in slightly wavy flowing twintails and violet-pink eyes. Her distinctive horns, which she insists are real (though fans debate whether they're dark chocolate or Styrofoam), are maintained by Hell magic to prevent melting in hell's heat. In her hellhound form, she transforms into an adorable 1 ft. tall (wan foot tall) puppy.",
+  },
+  {
+    header: "Her Community: Minawan",
+    desc: "Cerber's loving community is called Minawan, a clever wordplay on \"mina-san\" (meaning \"everyone\" in Japanese). The Minawan mascot looks similar to Cerber's dog form but lacks the demon tail and horns, appearing as a friendly, adorable dog.",
+  }
 ];

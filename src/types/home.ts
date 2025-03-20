@@ -13,3 +13,8 @@ export interface SocialProps {
   svgd: string;
   link: string;
 }
+
+export interface h3ParagraphProps {
+  header: string;
+  desc: string;
+}

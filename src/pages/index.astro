@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { CharacterDetails, FunFacts, Likes, Dislikes, Gallery, Socials } from '../data/home';
-import type { CharacterDetailsProps, GalleryProps, SocialProps } from '../types/home';
+import { CharacterDetails, h3Paragraphs, FunFacts, Likes, Dislikes, Gallery, Socials } from '../data/home';
+import type { CharacterDetailsProps, GalleryProps, h3ParagraphProps, SocialProps } from '../types/home';
 ---
 
 <Layout>
@@ -22,39 +22,19 @@ import type { CharacterDetailsProps, GalleryProps, SocialProps } from '../types/
 		      ))}
         </div>
 
-        <h3>Personality</h3>
-        <p>
-          She is a cheerful beacon of intense positivity and wholesomeness. As a
-          hellhound, she nicknames everyone with "Wan" in their name and uses it
-          like a verbal tick, such as switching "1" for wan at every
-          opportunity. She is easily flustered by simple compliments, adding to
-          her endearing nature.
-        </p>
+        {h3Paragraphs.map((bio: h3ParagraphProps) => (
+          <h3>{bio.header}</h3>
+          <p>{bio.desc}</p>
+        ))}
 
-        <h3>Appearance</h3>
-        <p>
-          Standing at 4'1" (or, as she says it, 4 foot wan), Cerber has blonde
-          hair styled in slightly wavy flowing twintails and violet-pink eyes.
-          Her distinctive horns, which she insists are real (though fans debate
-          whether they're dark chocolate or Styrofoam), are maintained by Hell
-          magic to prevent melting in hell's heat. In her hellhound form, she
-          transforms into an adorable 1 ft. tall (wan foot tall) puppy.
-        </p>
-
-        <h3>Fun Facts</h3>
-        <ul class="fun-facts">
-		      {FunFacts.map((fact: string) => (
-			      <li>{fact}</li>
-		      ))}
-        </ul>
       </div>
-      <h3>Her Community: Minawan</h3>
-      <p>
-        Cerber's loving community is called Minawan, a clever wordplay on
-        "mina-san" (meaning "everyone" in Japanese). The Minawan mascot looks
-        similar to Cerber's dog form but lacks the demon tail and horns,
-        appearing as a friendly, adorable dog.
-      </p>
+
+      <h3>Fun Facts</h3>
+      <ul class="fun-facts">
+		    {FunFacts.map((fact: string) => (
+			    <li>{fact}</li>
+		    ))}
+      </ul>
 
       <h3>Likes</h3>
       <ul>
