@@ -1,0 +1,63 @@
+---
+import type { HeaderProps } from "../types/components";
+
+const navbarData: HeaderProps[] = [
+    {
+      name: "Home",
+      url: "/",
+    },
+    {
+      name: "Lore & Intro",
+      url: "/lore",
+    },
+    {
+      name: "Forms",
+      url: "/forms",
+    },
+    {
+      name: "Timeline",
+      url: "/timeline",
+    },
+    {
+      name: "Watch Live",
+      url: "https://twitch.tv/cerbervt",
+    },
+];
+---
+
+<header>
+  <div class="plus-icon" hidden>+</div>
+  <h1>CerberVT</h1>
+  <span
+    >This is a unofficial community ran website. Not affiliated with
+    Cerber.</span
+  >
+  <nav id="menu">
+    <ul id="navlinks">
+      {navbarData.map((link: HeaderProps) => (
+        <li><a href={link.url}>{link.name}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  function updatemenu() {
+    const menu = document.getElementById("menu");
+    if (!menu) return;
+    const responsiveMenu = document.getElementById("responsive-menu");
+    if (responsiveMenu) {
+      menu.style.borderBottomRightRadius = "0";
+      menu.style.borderBottomLeftRadius = "0";
+    } else {
+      menu.style.borderRadius = "10px";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const responsiveMenuElement = document.getElementById("responsive-menu");
+    if (responsiveMenuElement) {
+      responsiveMenuElement.addEventListener("change", updatemenu);
+    }
+  });
+</script>

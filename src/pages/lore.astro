@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <main>
+      <h1>Intro/Lore</h1>
+      <div class="custom-video-container">
+        <video class="custom-video" id="introVideo">
+          <source src="assets/IntroAndLore.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="custom-video-controls">
+          <button
+            class="play-pause-btn"
+            id="playPauseBtn"
+            aria-label="Playback Button"
+            title="Play/Pause"
+          >
+            <svg viewBox="0 0 24 24" class="play-icon">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg viewBox="0 0 24 24" class="pause-icon" style="display: none">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+          </button>
+          <input
+            type="range"
+            class="time-slider"
+            id="timeSlider"
+            min="0"
+            value="0"
+            step="0.1"
+            aria-label="Playback Slider"
+          />
+          <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const video = document.getElementById("introVideo") as HTMLVideoElement;
+          const playPauseBtn = document.getElementById("playPauseBtn") as HTMLButtonElement;
+          const timeSlider = document.getElementById("timeSlider") as HTMLInputElement;
+          const timeDisplay = document.getElementById("timeDisplay") as HTMLDivElement;
+          const playIcon = playPauseBtn.querySelector(".play-icon") as SVGElement;
+          const pauseIcon = playPauseBtn.querySelector(".pause-icon") as SVGElement;
+
+          video.addEventListener("loadedmetadata", function () {
+            timeSlider.max = video.duration.toString();
+            updateTimeDisplay();
+          });
+
+          playPauseBtn.addEventListener("click", function () {
+            if (video.paused) {
+              video.play();
+              playIcon.style.display = "none";
+              pauseIcon.style.display = "block";
+            } else {
+              video.pause();
+              playIcon.style.display = "block";
+              pauseIcon.style.display = "none";
+            }
+          });
+
+          video.addEventListener("timeupdate", function () {
+            timeSlider.value = video.currentTime.toString();
+            updateTimeDisplay();
+          });
+
+          timeSlider.addEventListener("input", function () {
+            video.currentTime = parseFloat(timeSlider.value);
+            updateTimeDisplay();
+          });
+
+          function updateTimeDisplay() {
+            const current = formatTime(video.currentTime);
+            const duration = formatTime(video.duration);
+            timeDisplay.textContent = `${current} / ${duration}`;
+          }
+
+          function formatTime(seconds: number) {
+            const minutes = Math.floor(seconds / 60);
+            seconds = Math.floor(seconds % 60);
+            return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+          }
+
+          video.addEventListener("ended", function () {
+            playIcon.style.display = "block";
+            pauseIcon.style.display = "none";
+          });
+        });
+      </script>
+    </main>
+</Layout>

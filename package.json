@@ -1,29 +1,29 @@
 {
-  "dependencies": {
-    "clean-css": "^5.3.3",
-    "html-minifier": "^4.0.0",
-    "uglify-js": "^3.19.3",
-    "wrangler": "^3.99.0"
-  },
   "name": "cerbersiteber",
-  "version": "1.0.0",
+  "private": true,
   "description": "A site for Cerber!",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "wrangler pages dev ./site --live-reload --ip 0.0.0.0",
-    "build": "node minify.js site dist"
+    "dev": "astro dev",
+    "build": "astro build && node utils/minify.cjs site dist",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "wrangler publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gwashark/CerberSiteber.git"
+  "dependencies": {
+    "@astrojs/sitemap": "~3.3.0",
+    "astro": "~5.5.3",
+    "astro-robots": "~2.3.1",
+    "clean-css": "~5.3.3"
   },
-  "keywords": [
-    "cerber",
-    "cerbervt"
-  ],
-  "author": "GwaShark",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gwashark/CerberSiteber/issues"
-  },
-  "homepage": "https://github.com/gwashark/CerberSiteber#readme"
+  "devDependencies": {
+    "@types/clean-css": "~4.2.11",
+    "@types/html-minifier": "~4.0.5",
+    "@types/uglify-js": "~3.17.5",
+    "html-minifier": "~4.0.0",
+    "prettier": "~3.5.3",
+    "uglify-js": "~3.19.3",
+    "wrangler": "~4.2.0"
+  }
 }

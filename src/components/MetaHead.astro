@@ -1,0 +1,13 @@
+---
+import { metaTags, metaLinks } from "../data/meta";
+import type { MetaTagProps, MetaLinkProps } from "../types/components";
+---
+
+<title>CerberVT</title>
+{metaLinks.map((link: MetaLinkProps) => (
+  <link {...link} />
+))}
+{metaTags.map((tag: MetaTagProps) => (
+  <meta {...tag} />
+))}
+<script src="https://unpkg.com/mustache@latest"></script>

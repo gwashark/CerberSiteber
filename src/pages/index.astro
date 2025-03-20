@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CharacterDetails, h3Paragraphs, FunFacts, Likes, Dislikes, Gallery, Socials } from '../data/home';
+import type { CharacterDetailsProps, GalleryProps, h3ParagraphProps, SocialProps } from '../types/home';
+---
+
+<Layout>
+	<main>
+      <h2>About CerberVT</h2>
+      <p>
+        Cerber was named after Cerberus, the gatekeeper of Hell, and lives in
+        hell under the UK. She was entranced by the world of video games, anime,
+        VTubers and idols filled with fun and luster, a stark contrast to the
+        dark underworld she was all so familiar with.
+      </p>
+      <a href="/lore"><button>Watch Lore</button></a>
+      <div class="character-info">
+        <h3>Character Details 💜🦴</h3>
+        <div class="info-grid">
+      	  {CharacterDetails.map((detail: CharacterDetailsProps) => (
+			      <div class="info-item"><strong>{detail.name}:</strong> {detail.value}</div>
+		      ))}
+        </div>
+
+        {h3Paragraphs.map((bio: h3ParagraphProps) => (
+          <h3>{bio.header}</h3>
+          <p>{bio.desc}</p>
+        ))}
+
+      </div>
+
+      <h3>Fun Facts</h3>
+      <ul class="fun-facts">
+		    {FunFacts.map((fact: string) => (
+			    <li>{fact}</li>
+		    ))}
+      </ul>
+
+      <h3>Likes</h3>
+      <ul>
+		    {Likes.map((like: string) => (
+			    <li>{like}</li>
+		    ))}
+      </ul>
+
+      <h3>Dislikes</h3>
+      <ul>
+		    {Dislikes.map((dislike: string) => (
+			    <li>{dislike}</li>
+		    ))}
+      </ul>
+
+      <div class="maingallery image-gallery">
+		    {Gallery.map((entry: GalleryProps) => (
+			    <div class="gallery-item">
+				    <img
+              src={`assets/${entry.src}.webp`}
+				      alt={entry.alt}
+				      onclick="showModal(this.src)"
+				    />
+			    </div>
+		    ))}
+      </div>
+      <div class="social-grid">
+		    {Socials.map((social: SocialProps) => (
+			    <a href={social.link} class="social-item">
+				    <svg class="social-icon" viewBox="0 0 24 24">
+					    <path d={social.svgd} />
+				    </svg>
+				    <div class="social-title">{social.name}</div>
+			    </a>
+		    ))}
+      </div>
+    </main>
+</Layout>
