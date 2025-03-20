@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import robots from "astro-robots";
 
-const site: string = "https://cerbervt.pages.dev/";
+const site: string = "cerbervt.pages.dev";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,7 +13,7 @@ export default defineConfig({
     sitemap(),
     robots({
       host: site,
-      sitemap: ["/sitemap.xml"],
+      sitemap: [`https://${site}/sitemap-0.xml`, `https://${site}/sitemap-index.xml`],
       policy: [
         {
           userAgent: "*",
@@ -23,5 +23,5 @@ export default defineConfig({
       ],
     }),
   ],
-  site: site,
+  site: `https://${site}/`,
 });
