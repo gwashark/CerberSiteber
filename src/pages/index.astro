@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CharacterDetails, FunFacts, Likes, Dislikes, Gallery, Socials } from '../data/home';
+import type { CharacterDetailsProps, GalleryProps, SocialProps } from '../types/home';
+---
+
+<Layout>
+	<main>
+      <h2>About CerberVT</h2>
+      <p>
+        Cerber was named after Cerberus, the gatekeeper of Hell, and lives in
+        hell under the UK. She was entranced by the world of video games, anime,
+        VTubers and idols filled with fun and luster, a stark contrast to the
+        dark underworld she was all so familiar with.
+      </p>
+      <a href="/lore"><button>Watch Lore</button></a>
+      <div class="character-info">
+        <h3>Character Details 💜🦴</h3>
+        <div class="info-grid">
+      	  {CharacterDetails.map((detail: CharacterDetailsProps) => (
+			<div class="info-item"><strong>{detail.name}:</strong> {detail.value}</div>
+		  ))}
+        </div>
+
+        <h3>Personality</h3>
+        <p>
+          She is a cheerful beacon of intense positivity and wholesomeness. As a
+          hellhound, she nicknames everyone with "Wan" in their name and uses it
+          like a verbal tick, such as switching "1" for wan at every
+          opportunity. She is easily flustered by simple compliments, adding to
+          her endearing nature.
+        </p>
+
+        <h3>Appearance</h3>
+        <p>
+          Standing at 4'1" (or, as she says it, 4 foot wan), Cerber has blonde
+          hair styled in slightly wavy flowing twintails and violet-pink eyes.
+          Her distinctive horns, which she insists are real (though fans debate
+          whether they're dark chocolate or Styrofoam), are maintained by Hell
+          magic to prevent melting in hell's heat. In her hellhound form, she
+          transforms into an adorable 1 ft. tall (wan foot tall) puppy.
+        </p>
+
+        <h3>Fun Facts</h3>
+        <ul class="fun-facts">
+		  {FunFacts.map((fact: string) => (
+			<li>{fact}</li>
+		  ))}
+          <li>Owns a caramel-colored Pomeranian named Peanut</li>
+          <li>
+            Has a special Twitch chat rule: "Cerberbullying is only allowed if
+            served with equal parts love & affection ૮ ・ﻌ・ა"
+          </li>
+          <li>
+            Is highly ticklish - even thinking about being tickled makes her
+            giggly
+          </li>
+          <li>
+            Built like a squeaky toy - weapons or hell's natural disasters just
+            make her squeak safely without damage
+          </li>
+        </ul>
+      </div>
+      <h3>Her Community: Minawan</h3>
+      <p>
+        Cerber's loving community is called Minawan, a clever wordplay on
+        "mina-san" (meaning "everyone" in Japanese). The Minawan mascot looks
+        similar to Cerber's dog form but lacks the demon tail and horns,
+        appearing as a friendly, adorable dog.
+      </p>
+
+      <h3>Likes</h3>
+      <ul>
+		{Likes.map((like: string) => (
+			<li>{like}</li>
+		))}
+      </ul>
+
+      <h3>Dislikes</h3>
+      <ul>
+		{Dislikes.map((dislike: string) => (
+			<li>{dislike}</li>
+		))}
+      </ul>
+
+      <div class="maingallery image-gallery">
+		{Gallery.map((entry: GalleryProps) => (
+			<div class="gallery-item">
+				<img src={`assets/${entry.src}.webp`}
+				alt={entry.alt}
+				onclick="showModal(this.src)"
+				/>
+			</div>
+		))}
+      </div>
+      <div class="social-grid">
+		{Socials.map((social: SocialProps) => (
+			<a href={social.link} class="social-item">
+				<svg class="social-icon" viewBox="0 0 24 24">
+					<path d={social.svgd} />
+				</svg>
+				<div class="social-title">{social.name}</div>
+			</a>
+		))}
+      </div>
+    </main>
+</Layout>

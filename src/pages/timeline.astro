@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { timelineData } from '../data/timeline';
+import type { timelineProps } from '../types/timeline';
+---
+
+<Layout>
+    <main>
+        <h2>Events and History</h2>
+        <div class="timeline-container">
+            {timelineData.map((item: timelineProps) => (
+                <div class="timeline-item" id={`on-${item.shortdate}`}>
+                    <div class="timeline-date">{item.date}</div>
+                    <div class="timeline-content">{item.description}</div>
+                    {item.image && (
+                        <div class="gallery-item" style="margin-top: 15px">
+                            <img
+                                src={item.image}
+                                alt={item.description}
+                                onclick="showModal(this.src)"
+                            />
+                        </div>
+                    )}
+                </div>
+            ))}
+        </div>
+    </main>
+</Layout>

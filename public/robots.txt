@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: 
+Allow: *
 Crawl-delay: 5
-Disallow: /add2homescreen/
 Sitemap: /sitemap.xml
