@@ -9,3 +9,10 @@ export interface MetaTagProps {
   property?: string;
   content: string;
 }
+
+export interface MetaLinkProps {
+    rel: string;
+    type?: string;
+    sizes?: string;
+    href: string;
+}

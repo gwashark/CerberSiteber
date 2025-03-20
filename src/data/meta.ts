@@ -1,4 +1,4 @@
-import type { MetaTagProps } from "../types/components";
+import type { MetaTagProps, MetaLinkProps } from "../types/components";
 
 export const metaTags: MetaTagProps[] = [
   { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -21,4 +21,27 @@ export const metaTags: MetaTagProps[] = [
     content: "https://cerbervt.pages.dev/assets/embedimage.png",
   },
   { name: "twitter:card", content: "summary_large_image" },
+];
+
+export const metaLinks: MetaLinkProps[] = [
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Yomogi&display=swap",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    sizes: "32x32",
+    href: "assets/favicons/favicon-32x32.png",
+  },
+  {
+    rel: "icon",
+    type: "image/png",
+    sizes: "16x16",
+    href: "assets/favicons/favicon-16x16.png",
+  },
+  {
+    rel: "manifest",
+    href: "/manifest.json",
+  },
 ];

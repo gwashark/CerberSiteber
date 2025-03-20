@@ -1,27 +1,13 @@
 ---
-import { metaTags } from "../data/meta";
-import type { MetaTagProps } from "../types/components";
+import { metaTags, metaLinks } from "../data/meta";
+import type { MetaTagProps, MetaLinkProps } from "../types/components";
 ---
 
 <title>CerberVT</title>
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Yomogi&amp;display=swap"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="32x32"
-  href="assets/favicons/favicon-32x32.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="16x16"
-  href="assets/favicons/favicon-16x16.png"
-/>
-{metaTags.map((tag: MetaTagProps) => (
-    <meta {...tag} />
+{metaLinks.map((link: MetaLinkProps) => (
+  <link {...link} />
 ))}
-<link rel="manifest" href="/manifest.json" />
+{metaTags.map((tag: MetaTagProps) => (
+  <meta {...tag} />
+))}
 <script src="https://unpkg.com/mustache@latest"></script>
