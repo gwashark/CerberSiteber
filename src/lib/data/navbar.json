@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Home",
+        "url": "/"
+    },
+    {
+        "name":"Lore & Intro",
+        "url":"/lore"
+    },
+    {
+        "name":"Forms",
+        "url":"/forms"
+    },
+    {
+        "name":"Timeline",
+        "url":"/timeline"
+    },
+    {
+        "name":"Watch Live",
+        "url":"https://twitch.tv/cerbervt"
+    }
+]
