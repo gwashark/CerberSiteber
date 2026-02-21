@@ -40,3 +40,22 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+## Cloudflare Pages deployment
+
+Build locally then deploy with Wrangler (wrangler will read `pages_build_output_dir` from `wrangler.jsonc`):
+
+```bash
+npm install
+npm run build
+npx wrangler pages deploy
+```
+
+Alternatively, connect the repository in the Cloudflare Pages dashboard and set:
+- Build command: `npm run build`
+- Build output directory: `build`
+
+Note on build failures:
+
+- If the Pages build fails during `npm install` with peer dependency errors (ERESOLVE), this repository includes an `.npmrc` with `legacy-peer-deps=true` so the installer accepts legacy peer deps. This is a temporary workaround.
+- Long-term fix: update `@sveltejs/adapter-static` to a version compatible with your `@sveltejs/kit` (or match the adapter to the Kit major version).
